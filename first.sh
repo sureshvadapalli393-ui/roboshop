@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI_ID="ami-09c813fb71547fc4f"
-SG_ID = "sg-0c8311807a45cafaa"
+SG_ID="sg-0c8311807a45cafaa"
 
 for instance in $@
 do
@@ -13,7 +13,7 @@ do
 --query "Reservations[0].Instances[0].InstanceId" \
   --output text)
 
-  if[ $instance != "frontend" ]; then
+  if[ $instance -ne "frontend" ]; then
       IP=$(aws ec2 describe-instances \
   --instance-ids $INSTANCE_ID \
   --query "Reservations[0].Instances[0].PrivateIpAddress" \
