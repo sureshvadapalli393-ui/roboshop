@@ -68,7 +68,7 @@ cd /app
 npm install  &>>LOGS_FILE
 VALIDATE $? "Install dependencies"
 
-cp  $CURRENT_DIR/catalogue.service /etc/yum.repos.d/mongo.repo
+cp  $CURRENT_DIR/catalogue.service /etc/yum.repos.d/catalogue.service
 VALIDATE $? "copy catalogue service"
 
 systemctl daemon-reload
