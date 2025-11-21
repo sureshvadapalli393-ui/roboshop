@@ -6,7 +6,7 @@ YELLOW="\e[33m"
 N="\e[0m"
 
 SUDO_ID=$(id -u)
-CURRENT_DIR=$pwd
+CURRENT_DIR=$(pwd)
 
 LOGS_FOLDER="/var/log/new-shell-script-practice"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
