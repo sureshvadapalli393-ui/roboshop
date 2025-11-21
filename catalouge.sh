@@ -57,7 +57,7 @@ VALIDATE $? "unzip catalogue"
 npm install  &>>LOGS_FILE
 VALIDATE $? "Install dependencies"
 
-cp catalogue.service /etc/yum.repos.d/mongo.repo
+cp  catalogue.service /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copy catalogue service"
 
 systemctl daemon-reload
