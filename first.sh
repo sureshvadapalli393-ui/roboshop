@@ -5,7 +5,7 @@ SG_ID="sg-0c8311807a45cafaa"
 
 for instance in $@
 do
-  INSTANCE_ID = $(aws ec2 run-instances \
+  INSTANCE_ID=$(aws ec2 run-instances \
   --image-id $AMI_ID \
   --instance-type t2.micro \
   --security-group-ids $SG_ID \
