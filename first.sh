@@ -9,7 +9,7 @@ do
     --image-id $AMI_ID \
     --instance-type t2.micro \
     --security-group-ids $SG_ID \
-    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]"
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$instance}]" \
     --query 'Instances[0].InstanceId' --output text
 
     if [ $instance != "frontend" ]; then
