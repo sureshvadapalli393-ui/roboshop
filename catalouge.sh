@@ -6,9 +6,9 @@ YELLOW="\e[33m"
 N="\e[0m"
 
 SUDO_ID=$(id -u)
+CURRENT_DIR=$pwd
 
-
-LOGS_FOLDER="/var/log/shell-roboshop"
+LOGS_FOLDER="/var/log/new-shell-script-practice"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
@@ -57,7 +57,7 @@ VALIDATE $? "unzip catalogue"
 npm install  &>>LOGS_FILE
 VALIDATE $? "Install dependencies"
 
-cp  catalogue.service /etc/yum.repos.d/mongo.repo
+cp  $CURRENT_DIR/catalogue.service /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copy catalogue service"
 
 systemctl daemon-reload
