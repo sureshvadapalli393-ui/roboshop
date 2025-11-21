@@ -63,10 +63,12 @@ VALIDATE $? "removing existing code"
 unzip /tmp/catalogue.zip
 VALIDATE $? "unzip catalogue"
 
+cd /app 
+
 npm install  &>>LOGS_FILE
 VALIDATE $? "Install dependencies"
 
-cp  catalogue.service /etc/yum.repos.d/mongo.repo
+cp  $CURRENT_DIR/catalogue.service /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copy catalogue service"
 
 systemctl daemon-reload
